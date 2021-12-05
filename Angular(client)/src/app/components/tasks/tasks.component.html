@@ -1,0 +1,15 @@
+<app-add-task (onAddTask)='createTask($event)'></app-add-task>
+<table border='1px solid black'>
+    <tr>
+        <td>Desc</td>
+        <td>Done?</td>
+
+    </tr>
+    <tr *ngFor="let task of tasks">
+        <td>{{task.desc}}</td>
+        <td>
+            <p *ngIf="task.done">Done!</p> <button (click)="completeTask(task)" *ngIf="!task.done">mark as
+                completed</button>
+        </td>
+    </tr>
+</table>
